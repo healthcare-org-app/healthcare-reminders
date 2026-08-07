@@ -1,0 +1,12 @@
+name: reminders-service
+port: 8602
+lang: python
+description: "reminders-service \u2014 domain: appointments"
+http_deps:
+- notifications-service
+- patients-service
+- audit-log-service
+publishes:
+- audit.event
+subscribes:
+- appointment.booked
